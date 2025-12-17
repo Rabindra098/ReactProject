@@ -41,20 +41,6 @@
   ],
   "videos": [
     {
-      "video_id": 1,
-      "title": "React FAQ's",
-      "url": "https://www.youtube.com/embed/NJVQA10RPuA",
-      "description": "React JS Interview Tips",
-      "category_id": 3,
-      "likes": 300,
-      "views": 600,
-      "dislikes": 0,
-      "comments": [
-        "Thank you"
-      ],
-      "id": "1"
-    },
-    {
       "id": "7519",
       "video_id": 109,
       "title": ".Net Tutorial",

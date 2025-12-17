@@ -16,48 +16,38 @@ export default function VideoLibraryIndex() {
             <BrowserRouter>
 
                 {/* 🔷 NAVBAR */}
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-1">
-    <Link to="/" className="navbar-brand fw-bold">
-        <span className="bi bi-house-door-fill me-2"></span>
-        Video Podcast
-    </Link>
-
-    {/* Right side content */}
-    <span className="navbar-text text-white ms-auto">
-        Java | .NET | React
-    </span>
-    </nav>
-
-                {/* 🔷 HEADER (Your existing header – unchanged)
-                <header className="text-center p-2 text-white">
-                    <div className="fs-1 fw-bold">
-                        <Link to="/" className="btn btn-light me-2">
-                            <span className="bi bi-house-door"></span>
-                        </Link>
+                <nav className="navbar navbar-dark px-4 shadow-lg">
+                    <Link to="/" className="navbar-brand fw-bold fs-4 text-white">
+                        <span className="bi bi-camera-video-fill me-2"></span>
                         Video Podcast
-                    </div>
-                    <div>[Java, .NET, React]</div>
-                </header> */}
+                    </Link>
+
+                    <span className="navbar-text text-light ms-auto fw-semibold">
+                        Java • .NET • React
+                    </span>
+                </nav>
 
                 {/* 🔷 PAGE CONTENT */}
-                <section className="p-5 flex-fill">
-                    <Routes>
-                        <Route path="/" element={<VideoHome />} />
-                        <Route path="admin-login" element={<AdminLogin />} />
-                        <Route path="user-login" element={<UserLogin />} />
-                        <Route path="admin-dashboard" element={<AdminDashboard />} />
-                        <Route path="add-video" element={<AddVideo />} />
-                        <Route path="delete-video/:id" element={<DeleteVideo />} />
-                        <Route path="edit-video/:id" element={<EditVideo />} />
-                        <Route path="user-register" element={<UserRegister />} />
-                        <Route path="user-dashboard" element={<UserDashboard />} />
-                    </Routes>
+                <section className="flex-fill d-flex justify-content-center align-items-center">
+                    <div className="content-box shadow-lg">
+                        <Routes>
+                            <Route path="/" element={<VideoHome />} />
+                            <Route path="admin-login" element={<AdminLogin />} />
+                            <Route path="user-login" element={<UserLogin />} />
+                            <Route path="admin-dashboard" element={<AdminDashboard />} />
+                            <Route path="add-video" element={<AddVideo />} />
+                            <Route path="delete-video/:id" element={<DeleteVideo />} />
+                            <Route path="edit-video/:id" element={<EditVideo />} />
+                            <Route path="user-register" element={<UserRegister />} />
+                            <Route path="user-dashboard" element={<UserDashboard />} />
+                        </Routes>
+                    </div>
                 </section>
 
                 {/* 🔷 FOOTER */}
-                <footer className="bg-dark text-white text-center py-2">
+                <footer className="footer text-center text-light py-2">
                     <small>
-                        © 2025 Video Podcast App | React • Bootstrap • JSON Server
+                        © 2025 Video Podcast App • React • Bootstrap • JSON Server
                     </small>
                 </footer>
 

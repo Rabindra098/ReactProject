@@ -1,70 +1,88 @@
-import axios from "axios"
-import { useEffect, useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function AdminDashboard() {
 
-    const [videos, setVideos] = useState([{
-        id: 0,
-        video_id: 0,
-        title: null,
-        url: null,
-        description: null,
-        category_id: 0,
-        likes: 0,
-        views: 0,
-        dislikes: 0,
-        comments: null
-    }])
+    const [videos, setVideos] = useState([]);
 
     let navigate = useNavigate();
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/videos`)
-            .then(response => {
-                setVideos(response.data);
-            })
-    }, [])
+        axios.get("http://localhost:3000/videos")
+            .then(response => setVideos(response.data));
+    }, []);
 
-    function handlSignoutClick() {
-        window.sessionStorage.removeItem('uname');
-        navigate('/');
+    function handleSignoutClick() {
+        window.sessionStorage.removeItem("uname");
+        navigate("/");
     }
 
     return (
-        <div className="p-4 bg-light rounded rounded-2 overflow-auto">
-            <h3 className="d-flex justify-content-between align-items-center">
-                {window.sessionStorage.getItem('uname')} - Dashboard
-                <Link to="/add-video" className="btn btn-primary bi bi-camera-video"> Add Video</Link>
-                <button onClick={handlSignoutClick} className="btn text-bg-danger">
-                    Signout <i className="bi bi-box-arrow-right mx-1"></i>
-                </button>
-            </h3>
+        <div className="admin-dashboard">
 
-            <div className="table-responsive">
-                <table className="table table-striped table-hover rounded rounded-2">
-                    <thead className="table-light">
+            {/* 🔷 Header */}
+            <div className="dashboard-header d-flex justify-content-between align-items-center mb-4">
+                <h4 className="fw-bold">
+                    <i className="bi bi-speedometer2 me-2"></i>
+                    {window.sessionStorage.getItem("uname")} – Admin Dashboard
+                </h4>
+
+                <div>
+                    <Link to="/add-video" className="btn btn-primary me-2">
+                        <i className="bi bi-camera-video me-1"></i>
+                        Add Video
+                    </Link>
+
+                    <button onClick={handleSignoutClick} className="btn btn-danger">
+                        Signout <i className="bi bi-box-arrow-right ms-1"></i>
+                    </button>
+                </div>
+            </div>
+
+            {/* 🔷 Video Table */}
+            <div className="table-container shadow-sm">
+                <table className="table table-hover align-middle">
+                    <thead className="table-dark">
                         <tr>
-                            <th>Video Title</th>
+                            <th>Title</th>
                             <th>Preview</th>
-                            <th>Actions</th>
+                            <th className="text-center">Actions</th>
                         </tr>
                     </thead>
                 </table>
 
-                {/* Scrollable tbody */}
-                <div style={{ maxHeight: "400px", overflowY: "auto" }}>
-                    <table className="table table-bordered table-striped table-hover rounded rounded-2">
+                <div className="table-scroll">
+                    <table className="table table-striped align-middle">
                         <tbody>
                             {videos.map(video => (
                                 <tr key={video.id}>
-                                    <td>{video.title}</td>
+                                    <td className="fw-semibold">{video.title}</td>
+
                                     <td>
-                                        <iframe src={video.url} width="200" height="100"></iframe>
+                                        <iframe
+                                            src={video.url}
+                                            width="180"
+                                            height="100"
+                                            title={video.title}
+                                            className="rounded"
+                                        ></iframe>
                                     </td>
-                                    <td>
-                                        <Link to={`/edit-video/${video.id}`} className="bi btn btn-warning bi-pen-fill"></Link>
-                                        <Link to={`/delete-video/${video.id}`} className="bi bi-trash-fill btn btn-danger mx-2"></Link>
+
+                                    <td className="text-center">
+                                        <Link
+                                            to={`/edit-video/${video.id}`}
+                                            className="btn btn-sm btn-warning me-2"
+                                        >
+                                            <i className="bi bi-pencil-fill"></i>
+                                        </Link>
+
+                                        <Link
+                                            to={`/delete-video/${video.id}`}
+                                            className="btn btn-sm btn-danger"
+                                        >
+                                            <i className="bi bi-trash-fill"></i>
+                                        </Link>
                                     </td>
                                 </tr>
                             ))}
@@ -72,6 +90,7 @@ export default function AdminDashboard() {
                     </table>
                 </div>
             </div>
+
         </div>
     );
 }
