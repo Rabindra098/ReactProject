@@ -20,6 +20,20 @@
       "user_name": "Rabindra",
       "password": "Rabi@123",
       "email": "rabi123@gmail.com"
+    },
+    {
+      "id": "fd80",
+      "user_id": "hari09",
+      "user_name": "Harihar",
+      "password": "Hari@0987",
+      "email": "hari098@gmail.com"
+    },
+    {
+      "id": "1498",
+      "user_id": "loc81",
+      "user_name": "Loni",
+      "password": "Loni09",
+      "email": "loni@gmail.com"
     }
   ],
   "categories": [
