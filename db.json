@@ -1,0 +1,82 @@
+{
+  "admin": [
+    {
+      "id": "1",
+      "admin_id": "john_admin",
+      "password": "john@123"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "user_id": "sam123",
+      "user_name": "Samson",
+      "password": "sam@11",
+      "email": "sam@outlook.com"
+    },
+    {
+      "id": "9002",
+      "user_id": "Rabi098",
+      "user_name": "Rabindra",
+      "password": "Rabi@123",
+      "email": "rabi123@gmail.com"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "category_id": 1,
+      "category_name": "Java"
+    },
+    {
+      "id": "2",
+      "category_id": 2,
+      "category_name": ".NET"
+    },
+    {
+      "id": "3",
+      "category_id": 3,
+      "category_name": "React"
+    }
+  ],
+  "videos": [
+    {
+      "video_id": 1,
+      "title": "React FAQ's",
+      "url": "https://www.youtube.com/embed/NJVQA10RPuA",
+      "description": "React JS Interview Tips",
+      "category_id": 3,
+      "likes": 300,
+      "views": 600,
+      "dislikes": 0,
+      "comments": [
+        "Thank you"
+      ],
+      "id": "1"
+    },
+    {
+      "id": "7519",
+      "video_id": 109,
+      "title": ".Net Tutorial",
+      "url": "https://www.youtube.com/embed/kdPtNMb8tPw",
+      "description": "In this .Net Tutorial video, you will learn everything about .net from basic to advanced topics. ",
+      "category_id": 2,
+      "likes": 743,
+      "views": 8763,
+      "dislikes": 0,
+      "comments": "\"so far with respect to this... \"  can be abstraction. BTW, Very good and informative video."
+    },
+    {
+      "id": "5163",
+      "video_id": 6,
+      "title": "Java Introduction",
+      "url": "https://www.youtube.com/embed/bm0OyhwFDuY&list=PLsyeobzWxl7pe_IiTfNyr55kwJPWbgxB5",
+      "description": "This comprehensive Java course covers fundamentals, OOP, interfaces, exception handling, and more",
+      "category_id": 1,
+      "likes": 7874,
+      "views": 872,
+      "dislikes": 0,
+      "comments": "Who are watching in 2025 ?"
+    }
+  ]
+}

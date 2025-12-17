@@ -1,0 +1,23 @@
+.bg-banner {
+  position: relative;
+  height: 100vh;       /* full viewport height */
+  width: 100%;
+  overflow: hidden;
+}
+
+.bg-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* shorthand for top/right/bottom/left:0 */
+  background: url("banner.jpg") center center / cover no-repeat;
+  filter: blur(12px);
+  transform: scale(1.08); /* prevents edges from showing */
+  z-index: 0;
+}
+
+/* ✅ keep content above the blurred background */
+.bg-banner > * {
+  position: relative;
+  z-index: 1;
+  color: #191212;  /* optional: makes text readable */
+}
